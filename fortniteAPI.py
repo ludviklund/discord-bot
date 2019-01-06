@@ -17,7 +17,6 @@ def get_lifetime_stats(*player):
 def get_current_season_stats(*player):
     FortniteAPI.api_key = ''
     player = FortniteAPI('pc', ' '.join(player))
-
     stats = {}
 
     stats['solo_wins'] = player.stats.CURRENT_SOLO_WINS
