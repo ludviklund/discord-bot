@@ -1,7 +1,7 @@
 from FortniteAPI import FortniteAPI
 
 def get_lifetime_stats(*player):
-    FortniteAPI.api_key = ''
+    FortniteAPI.api_key = '' # add fortnitetracker API-key here
     player = FortniteAPI('pc', ' '.join(player))
 
     stats = {}
