@@ -1,4 +1,4 @@
-from FortniteAPI import FortniteAPI
+from FortniteAPI import FortniteAPI 
 
 def get_lifetime_stats(*player):
     FortniteAPI.api_key = '' # add fortnitetracker API-key here
