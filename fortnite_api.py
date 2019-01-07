@@ -1,39 +1,39 @@
 from FortniteAPI import FortniteAPI 
+import config
 
-def get_lifetime_stats(*player):
-    FortniteAPI.api_key = '' # add fortnitetracker API-key here
-    player = FortniteAPI('pc', ' '.join(player))
+def get_lifetime_stats(*args):
+    FortniteAPI.api_key = '06805a5a-0c04-4239-9d73-61fb22cb8ef6'
+    player = FortniteAPI('pc', ' '.join(args))
+
     stats = {}
+    stat_titles = config.lifetime_titles
+    stat_values = [
+        player.stats.LIFETIME_MATCHES, player.stats.LIFETIME_WINS, player.stats.LIFETIME_WIN_PERCENTAGE,
+        player.stats.LIFETIME_KILLS, player.stats.LIFETIME_KD, player.stats.LIFETIME_SCORE
+    ]
 
-    stats['played'] = player.stats.LIFETIME_MATCHES
-    stats['wins'] = player.stats.LIFETIME_WINS
-    stats['win_percent'] = player.stats.LIFETIME_WIN_PERCENTAGE
-    stats['kills'] = player.stats.LIFETIME_KILLS
-    stats['kd'] = player.stats.LIFETIME_KD
-    stats['score'] = player.stats.LIFETIME_SCORE
+    for k, v in zip(stat_titles, stat_values):
+        stats[k] = v
 
     return stats
 
 
-def get_current_season_stats(*player):
-    FortniteAPI.api_key = ''
-    player = FortniteAPI('pc', ' '.join(player))
+def get_current_season_stats(*args):
+    FortniteAPI.api_key = '06805a5a-0c04-4239-9d73-61fb22cb8ef6'
+    player = FortniteAPI('pc', ' '.join(args))
+
     stats = {}
+    stat_names = config.current_season_titles
+    stat_values = [
+        player.stats.CURRENT_SOLO_WINS, player.stats.CURRENT_DUO_WINS, player.stats.CURRENT_SQUAD_WINS,
+        str(round((int(player.stats.CURRENT_SOLO_WINS) / int(player.stats.CURRENT_SOLO_MATCHES)) * 100)) + '%',
+        str(round((int(player.stats.CURRENT_DUO_WINS) / int(player.stats.CURRENT_DUO_MATCHES)) * 100)) + '%',
+        str(round((int(player.stats.CURRENT_SQUAD_WINS) / int(player.stats.CURRENT_SQUAD_MATCHES)) * 100)) + '%',
+        player.stats.CURRENT_SOLO_KILLS, player.stats.CURRENT_DUO_KILLS, player.stats.CURRENT_SQUAD_KILLS, 
+        player.stats.CURRENT_SOLO_KD, player.stats.CURRENT_DUO_KD, player.stats.CURRENT_SQUAD_KD
+    ]
 
-    stats['solo_wins'] = player.stats.CURRENT_SOLO_WINS
-    stats['duo_wins'] = player.stats.CURRENT_DUO_WINS
-    stats['squad_wins'] = player.stats.CURRENT_SQUAD_WINS
-
-    stats['solo_win_percent'] = str(round((int(stats['solo_wins']) / int(player.stats.CURRENT_SOLO_MATCHES)) * 100)) + '%'
-    stats['duo_win_percent'] = str(round((int(stats['duo_wins']) / int(player.stats.CURRENT_DUO_MATCHES)) * 100)) + '%'
-    stats['squad_win_percent'] = str(round((int(stats['squad_wins']) / int(player.stats.CURRENT_SQUAD_MATCHES)) * 100)) + '%'
-
-    stats['solo_kills'] = player.stats.CURRENT_SOLO_KILLS
-    stats['duo_kills'] = player.stats.CURRENT_DUO_KILLS
-    stats['squad_kills'] = player.stats.CURRENT_SQUAD_KILLS
-
-    stats['solo_kd'] = player.stats.CURRENT_SOLO_KD
-    stats['duo_kd'] = player.stats.CURRENT_DUO_KD
-    stats['squad_kd'] = player.stats.CURRENT_SQUAD_KD
+    for k, v in zip(stat_names, stat_values):
+        stats[k] = v
 
     return stats
