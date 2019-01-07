@@ -5,10 +5,12 @@ def get_lifetime_stats(*player):
     player = FortniteAPI('pc', ' '.join(player))
     stats = {}
 
+    stats['played'] = player.stats.LIFETIME_MATCHES
     stats['wins'] = player.stats.LIFETIME_WINS
     stats['win_percent'] = player.stats.LIFETIME_WIN_PERCENTAGE
     stats['kills'] = player.stats.LIFETIME_KILLS
     stats['kd'] = player.stats.LIFETIME_KD
+    stats['score'] = player.stats.LIFETIME_SCORE
 
     return stats
 
