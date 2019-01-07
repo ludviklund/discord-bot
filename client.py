@@ -31,9 +31,9 @@ async def help(ctx):
 
 
 @bot.command(pass_context=True)
-async def stats(ctx, *gamertag):
+async def stats(ctx, *args):
     """ Get fortnite stats via API """
-    gamertag = ' '.join(gamertag)
+    gamertag = ' '.join(args)
     embed_lifetime = discord.Embed(colour = discord.Colour.blue())
     embed_current_season = discord.Embed(colour = discord.Colour.purple())
 
@@ -47,10 +47,10 @@ async def stats(ctx, *gamertag):
             await bot.say(f'Finner ingen profil med gamertaggen `{gamertag}`')
         return
 
-    for title, stat in zip(config.lifetime_titles, lifetime_stats.values()):
+    for title, stat in lifetime_stats.items():
         embed_lifetime.add_field(name=title, value=stat, inline=True)
 
-    for title, stat in zip(config.current_season_titles, current_season_stats.values()):
+    for title, stat in current_season_stats.items():
         embed_current_season.add_field(name=title, value=stat, inline=True)
    
     await bot.say(f'Her er en total oversikt over `{gamertag}` siden Season 1:', embed=embed_lifetime)
