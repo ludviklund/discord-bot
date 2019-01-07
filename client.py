@@ -1,4 +1,4 @@
-import discord, asyncio, config, fortniteAPI, pyttsx3
+import discord, asyncio, config, fortnite_api, pyttsx3
 from discord.ext import commands
 
 
@@ -37,8 +37,8 @@ async def stats(ctx, *gamertag):
     embed_current_season = discord.Embed(colour = discord.Colour.purple())
 
     try:
-        lifetime_stats = fortniteAPI.get_lifetime_stats(gamertag)
-        current_season_stats = fortniteAPI.get_current_season_stats(gamertag)
+        lifetime_stats = fortnite_api.get_lifetime_stats(gamertag)
+        current_season_stats = fortnite_api.get_current_season_stats(gamertag)
     except:
         if not gamertag:
             await bot.say('Skriv `.stats [gamertag]` for å se oversikt.')
