@@ -1,4 +1,5 @@
-import discord, asyncio, config, fortnite_api, pyttsx3
+import discord, asyncio, pyttsx3
+from . import config, fortnite_api
 from discord.ext import commands
 
 
