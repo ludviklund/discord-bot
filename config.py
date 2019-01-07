@@ -17,7 +17,7 @@ poop_art = """
 ░░░▀▀░▄███▄▄░░░▐▄▄▄▀░░░
 """
 current_season = '7'
-lifetime_titles = ['Wins', 'Win %', 'Kills', 'K/D']
+lifetime_titles = ['Played', 'Wins', 'Win %', 'Kills', 'K/D', 'Score']
 current_season_titles = ['Solo Wins', 'Duo Wins', 'Squad Wins', 'Solo Win %', 'Duo Win %', 'Squad Win %', 'Solo Kills', 'Duo Kills', 'Squad Kills', 'Solo K/D', 'Duo K/D', 'Squad K/D']
 help_embed_content = {
 '.stats [gamertag]': 'Finner stats for gamertaggen du skriver inn. Bare for spillere på PC foreløpig.',
