@@ -18,9 +18,9 @@ def get_lifetime_stats(*args):
     return stats
 
 
-def get_current_season_stats(platform, *args):
+def get_current_season_stats(*args):
     FortniteAPI.api_key = config.fortnite_api_key
-    player = FortniteAPI(platform, ' '.join(args))
+    player = FortniteAPI('pc', ' '.join(args))
 
     stats = {}
     stat_names = config.titles_current_season
