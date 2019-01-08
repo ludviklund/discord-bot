@@ -37,3 +37,13 @@ def get_current_season_stats(*args):
         stats[k] = v
 
     return stats
+
+
+def get_store():
+    r = requests.get('https://api.fortnitetracker.com/v1/store', headers={'TRN-Api-Key': config.fortnite_api_key})
+    if r.status_code == 200:
+        js = r.json()
+        return js
+    else:
+        print('Could not retrieve store.')
+    return
