@@ -1,6 +1,7 @@
 import discord
+import config
+from api import fortnite_api as api
 from discord.ext import commands
-import config, fortnite_api
 
 class Fortnite():
     def __init__(self, bot):
@@ -14,8 +15,8 @@ class Fortnite():
         embed_current_season = discord.Embed(colour = discord.Colour.purple())
 
         try:
-            lifetime_stats = fortnite_api.get_lifetime_stats(gamertag)
-            current_season_stats = fortnite_api.get_current_season_stats(gamertag)
+            lifetime_stats = api.get_lifetime_stats(gamertag)
+            current_season_stats = api.get_current_season_stats(gamertag)
         except:
             if not gamertag:
                 await self.bot.say('Skriv `.stats [gamertag]` for å se oversikt.')
