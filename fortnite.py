@@ -32,6 +32,22 @@ class Fortnite():
     
         await self.bot.say(f'Her er en total oversikt over `{gamertag}` siden Season 1:', embed=embed_lifetime)
         await self.bot.say(f'Her er en oversikt over `{gamertag}` for Season {config.current_season}:', embed=embed_current_season)
+        
+    @commands.command()
+    async def store(self):
+        store = []
+        rarity = {'Fine': 0xffa31a, 'Quality': 0xd11aff, 'Sturdy': 0x0066ff, 'Handmade': 0x00cc00}
+
+        try:
+            store = api.get_store()
+        except:
+            await self.bot.say('Klarte ikke hente shoppen. Prøv igjen senere.')
+            return
+        
+        for item in store:
+            e = discord.Embed(title=item['name'], description=f"{item['vBucks']} vBucks", colour = rarity[item['rarity']])
+            e.set_thumbnail(url=item['imageUrl'])
+            await self.bot.say(embed=e)
 
 
 def setup(bot):
