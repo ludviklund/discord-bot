@@ -2,7 +2,7 @@ from FortniteAPI import FortniteAPI
 import config
 
 def get_lifetime_stats(*args):
-    FortniteAPI.api_key = '06805a5a-0c04-4239-9d73-61fb22cb8ef6'
+    FortniteAPI.api_key = config.fortnite_api_key
     player = FortniteAPI('pc', ' '.join(args))
 
     stats = {}
@@ -19,7 +19,7 @@ def get_lifetime_stats(*args):
 
 
 def get_current_season_stats(*args):
-    FortniteAPI.api_key = '06805a5a-0c04-4239-9d73-61fb22cb8ef6'
+    FortniteAPI.api_key = config.fortnite_api_key
     player = FortniteAPI('pc', ' '.join(args))
 
     stats = {}
