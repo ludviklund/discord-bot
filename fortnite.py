@@ -45,7 +45,7 @@ class Fortnite():
             return
         
         for item in store:
-            e = discord.Embed(title=item['name'], description=f"{item['vBucks']} vBucks", colour = rarity[item['rarity']])
+            e = discord.Embed(title=item['name'], description=f"{item['vBucks']} vBucks", colour=rarity[item['rarity']])
             e.set_thumbnail(url=item['imageUrl'])
             await self.bot.say(embed=e)
 
