@@ -5,14 +5,6 @@ import config
 class Fun():
     def __init__(self, bot):
         self.bot = bot
-
-    @commands.command()
-    async def poop(self):
-        """ A command that displays a big embed of a poop """
-        poop_embed = discord.Embed(colour = discord.Colour.orange())
-        poop_embed.set_author(name='The Great Poop', icon_url=config.poop_icon)
-        poop_embed.add_field(name='-'*46, value=config.poop_art, inline=True)
-        await self.bot.say(embed=poop_embed)
     
     @commands.command()
     async def echo(self, *args):
