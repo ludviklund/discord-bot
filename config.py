@@ -20,18 +20,3 @@ titles_current_season = ['Solo Wins', 'Duo Wins', 'Squad Wins', 'Solo Win %', 'D
 
 """ fun """
 slap_picture = 'https://akm-img-a-in.tosshub.com/indiatoday/images/story/201803/batman-slap-meme.jpeg?iOynX3gBLmiYgOoRaXz4cyJgGE3cDIr.'
-poop_icon = 'https://image.flaticon.com/icons/png/128/523/523808.png'
-poop_art = """
-░░░░░░░░░░░█▀▀░░█░░░░░░ 
-░░░░░░▄▀▀▀▀░░░░░█▄▄░░░░ 
-░░░░░░█░█░░░░░░░░░░▐░░░ 
-░░░░░░▐▐░░░░░░░░░▄░▐░░░
-░░░░░░█░░░░░░░░▄▀▀░▐░░░ 
-░░░░▄▀░░░░░░░░▐░▄▄▀░░░░ 
-░░▄▀░░░▐░░░░░█▄▀░▐░░░░░ 
-░░█░░░▐░░░░░░░░▄░█░░░░░ 
-░░░█▄░░▀▄░░░░▄▀▐░█░░░░░ 
-░░░█▐▀▀▀░▀▀▀▀░░▐░█░░░░░ 
-░░▐█▐▄░░▀▄░░░░░▐░█▄▄░░░ 
-░░░▀▀░▄███▄▄░░░▐▄▄▄▀░░░
-"""
